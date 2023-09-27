@@ -1,0 +1,45 @@
+body {
+    background-color: skyblue;
+    margin:0;
+}
+
+.game-section {
+    background-color: darkblue;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+
+.grid-container {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.box {
+    padding: 15px;
+    border: solid 1px black;
+}
+
+#scores-box {
+    
+}
+
+.one-player {
+    display: flex;
+    align-items: center;
+}
+
+.two-player {
+    display: none;
+    align-items: center;
+}
+
+#new-game-button {
+
+}
+
+/* Squares Styles*/
