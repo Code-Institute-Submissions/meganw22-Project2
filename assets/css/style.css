@@ -87,8 +87,8 @@ button:hover {
     background-color: rgb(253, 239, 245);
 }
 
-#new-game-btn {
-
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
-
-/* Squares Styles*/
