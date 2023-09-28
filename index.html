@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,45 +9,53 @@
     <!--Style Sheet-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1 id="game-title">Noughts and Crosses</h1>
+        <h1 id="game-title">Noughts & Crosses</h1>
     </header>
     <main>
-        <!--Game Section-->
-        <div class="game-section">
-            <div class="grid-container">
-                <div class="box">1</div>
-                <div class="box">2</div>
-                <div class="box">3</div>
-                <div class="box">4</div>
-                <div class="box">5</div>
-                <div class="box">6</div>
-                <div class="box">7</div>
-                <div class="box">8</div>
-                <div class="box">9</div>
-            </div>
-            <div id="scores-box">
-                <div class="one-player">
-                    <p class="player1">Player</p>
-                    <p class="draw-game">Draw</p>
-                    <p class="computer">Computer</p>  
+        <div class="center-align">
+            <!--Game Section-->
+            <div class="game-section">
+                <div class="grid-container">
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                    <div class="box">3</div>
+                    <div class="box">4</div>
+                    <div class="box">5</div>
+                    <div class="box">6</div>
+                    <div class="box">7</div>
+                    <div class="box">8</div>
+                    <div class="box">9</div>
                 </div>
-                <div class="two-player">
-                    <p class="player1">Player 1</p>
-                    <p class="draw-game">Draw</p>
-                    <p class="player2">Player 2</p>  
+                <div id="one-player-scores-box">
+                    <div class="one-player">
+                        <span class="player1">
+                            <div>Player 1</div>
+                            <div>0</div>
+                        </span>
+                        <span class="draw-game">
+                            <div>Draw</div>
+                            <div>0</div>
+                        </span>
+                        </span>
+                        <span class="computer">
+                            <div>Computer</div>
+                            <div>0</div>
+                        </span>
+                    </div>
                 </div>
+                <div id="new-game-button">
+                    <button>New Game</button>
+                </div>
+
             </div>
-            <div id="new-game-button">
-                <button>New Game</button>
-            </div>
-            
         </div>
-        
     </main>
     <footer>
-        
+
     </footer>
 </body>
+
 </html>
