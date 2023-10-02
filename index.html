@@ -19,19 +19,28 @@
         </h1>
     </header>
     <main>
+        <!--Game Section-->
         <div class="center-align">
-            <!--Game Section-->
-            <div class="game-section">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h2>Welcome to Noughts & Crosses!</h2>
+                    <p>Click 'New Game' to play and choose your game play option and be the first to get 3 in a row to
+                        win!</p>
+                        <button>New Game</button>
+                </div>
+            </div>
+            <div id="game-section">
+                <!--Grid area-->
                 <div class="grid-container">
-                    <div class="box">X</div>
-                    <div class="box">O</div>
-                    <div class="box">X</div>
-                    <div class="box">O</div>
-                    <div class="box">X</div>
-                    <div class="box">O</div>
-                    <div class="box">X</div>
-                    <div class="box">O</div>
-                    <div class="box">X</div>
+                    <div class="box" id="sq1">X</div>
+                    <div class="box" id="sq2">O</div>
+                    <div class="box" id="sq3">X</div>
+                    <div class="box" id="sq4">O</div>
+                    <div class="box" id="sq5">X</div>
+                    <div class="box" id="sq6">O</div>
+                    <div class="box" id="sq7">X</div>
+                    <div class="box" id="sq8">O</div>
+                    <div class="box" id="sq9">X</div>
                 </div>
                 <div id="one-player-scores-box">
                     <div class="one-player">
@@ -50,28 +59,34 @@
                         </span>
                     </div>
                 </div>
-                <div id="settings">
+                <!--Buttons-->
+                <div id="buttons-area">
                     <div class="center-align">
+                        <!--New Game-->
                         <div>
                             <button id="new-game-btn">New Game</button>
                         </div>
                     </div>
+                    <!--Change Player type-->
                     <div id="change-player-type" class="center-align">
                         <span>
-                            <button id="play-pc-btn" class="active">Computer</button>
+                            <button id="play-computer-btn" class="active">Computer</button>
                         </span>
                         <span>
                             <button id="two-players-btn">2 Player</button>
                         </span>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>
+    <!--Footer-->
     <footer>
-        <p>Created by Megan Walford for Project Portfolio 2!</p>
+        <p>Project Portfolio 2</p>
     </footer>
+
+    <!--Load Javascript-->
+    <script src="assets/scripts/script.js"></script>
 </body>
 
 </html>

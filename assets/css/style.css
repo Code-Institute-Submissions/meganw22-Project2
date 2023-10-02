@@ -22,8 +22,28 @@ body {
     align-items: center;
 }
 
-.game-section {
+.overlay {
+    display: none;
+    position: fixed;
+   /* left: 0;*/
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(252,171,205,0.7);
+    z-index: 100;
+}
+    
 
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    font-size: 25px;
+    transform: translate(-25%, -50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .grid-container {
@@ -68,8 +88,8 @@ body {
     
 }
 
-#settings {
-    margin-top: 55px;
+#buttons-area {
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
