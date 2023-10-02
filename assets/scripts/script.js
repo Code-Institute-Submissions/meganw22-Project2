@@ -1,9 +1,34 @@
-// general identifiers
-console.log("hello");
+document.addEventListener('DOMContentLoaded', function () {
+    // general settings
+    let newGameBtn = document.getElementsByClassName('new-game-btn');
 
+    //overlay settings
+    var overlay = document.querySelector('.overlay');
+    if (overlay) {
+        overlay.style.display = 'block';
 
-// Post DOM load, start up checks;
-document.addEventListener('DOMContentLoaded', function() {
-    let gameSection = document.getElementById('game-section');
+        var closeButton = document.getElementById('first-game-start');
+        if (closeButton) {
+            closeButton.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+        }
+    }
     
-})
+    document.
+});
+
+
+
+// Start new game
+function newGame() {
+
+    let clearBoxes = document.getElementsByClassName("box");
+    for (let i = 0; i < clearBoxes.length; i++) {
+        clearBoxes[i].innerHTML = "";
+    }
+}
+
+
+
+
