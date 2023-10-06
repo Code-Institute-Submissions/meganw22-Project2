@@ -1,14 +1,18 @@
 // general settings
 let newGameBtn = document.getElementById('new-game-btn');
+let twoPlayersBtn = document.getElementById('two-players-btn');
+let vsComputerBtn = document.getElementById('play-computer-btn');
+let playerXText = document.getElementById('player-x');
+let playerOText = document.getElementById('player-o');
 
 document.addEventListener('DOMContentLoaded', function () {
      
     //overlay settings
-    var overlay = document.querySelector('.overlay');
+    let overlay = document.querySelector('.overlay');
     if (overlay) {
         overlay.style.display = 'flex';
 
-        var closeButton = document.getElementById('lets-go-btn');
+        let closeButton = document.getElementById('lets-go-btn');
         if (closeButton) {
             closeButton.addEventListener('click', function() {
                 overlay.style.display = 'none';
@@ -30,6 +34,27 @@ function newGame() {
     }
 }
 
+//choose player type
+    twoPlayersBtn.addEventListener('click', function() {
+        playerOText.innerHTML = "Player O";
+    });
 
+    vsComputerBtn.addEventListener('click', function() {
+        playerOText.innerHTML = "Computer O";
+    });
 
+ 
+//if vs computer:
+function vsComputer () {
 
+}
+
+//ensure box is free for play
+function freeSpace() {
+
+}
+
+//player X turn?
+function checkMatches() {
+
+}
