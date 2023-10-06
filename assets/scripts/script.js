@@ -1,9 +1,12 @@
 // general settings
 let newGameBtn = document.getElementById('new-game-btn');
+let clearBoxes = document.getElementsByClassName("box");
 let twoPlayersBtn = document.getElementById('two-players-btn');
 let vsComputerBtn = document.getElementById('play-computer-btn');
 let playerXText = document.getElementById('player-x');
 let playerOText = document.getElementById('player-o');
+let boxes = document.getElementsByClassName("box");
+let playerXMove = true
 
 document.addEventListener('DOMContentLoaded', function () {
      
@@ -24,14 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 });
 
-
 // Start new game
 function newGame() {
-
-    let clearBoxes = document.getElementsByClassName("box");
     for (let i = 0; i < clearBoxes.length; i++) {
         clearBoxes[i].innerHTML = "";
     }
+    
 }
 
 //choose player type
@@ -43,18 +44,44 @@ function newGame() {
         playerOText.innerHTML = "Computer O";
     });
 
- 
+// add click event listeners to all boxes
+for (let i = 0; i < boxes.length; i++) {
+    boxes[i].addEventListener("click", handleBoxClick);
+}
+
+//X turn to play
+function handleBoxClick(event) {
+    if (playerXMove) {
+        event.target.innerHTML = "X";
+        playerXMove = false;
+    } 
+}
+
+
 //if vs computer:
 function vsComputer () {
-
+    if (playerOMove)
 }
 
-//ensure box is free for play
+/**
+ * //ensure box is free for play
 function freeSpace() {
-
+    //ensure box is free for play
+    let allCleared = true;
+    for (let i = 0; i < clearBoxes.length; i++) {
+        clearBoxes[i].innerHTML !== ""; {
+            allCleared = false;
+            break;
+        }
+    }
+    if (allCleared) {
+       playerXMove = true; 
+    }
 }
+ */
 
-//player X turn?
+
+//check 3 in a row
 function checkMatches() {
 
 }
