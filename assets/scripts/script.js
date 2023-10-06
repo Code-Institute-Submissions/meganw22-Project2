@@ -1,23 +1,24 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // general settings
-    let newGameBtn = document.getElementsByClassName('new-game-btn');
+// general settings
+let newGameBtn = document.getElementById('new-game-btn');
 
+document.addEventListener('DOMContentLoaded', function () {
+     
     //overlay settings
     var overlay = document.querySelector('.overlay');
     if (overlay) {
-        overlay.style.display = 'block';
+        overlay.style.display = 'flex';
 
-        var closeButton = document.getElementById('first-game-start');
+        var closeButton = document.getElementById('lets-go-btn');
         if (closeButton) {
-            closeButton.addEventListener('click', function () {
+            closeButton.addEventListener('click', function() {
                 overlay.style.display = 'none';
             });
         }
     }
-    
-    document.
+    newGameBtn.addEventListener("click", function() {
+        newGame();
+    })
 });
-
 
 
 // Start new game
