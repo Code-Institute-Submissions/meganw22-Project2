@@ -72,8 +72,14 @@ vsComputerBtn.addEventListener('click', onePlayerMode)
 
 // Update game status
 function updateGameStatus() {
+    let gameBoard = Array.from(document.getElementById("game-board").children).map(box => box.textContent);
+if (checkMatches(gameBoard, "X")) {
+    gameStatus.textContent = "Player X wins!"
+} else if (checkMatches(gameBoard, "O")) {
+    gameStatus.textContent = "Player O wins!"
+} else {
     gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
-}
+}}
 
 //Play X or O
 function handleBoxClick(event) {
@@ -116,7 +122,26 @@ function calculateRandomMove() {
     }
 }
 
-//check 3 in a row
-function checkMatches() {
+//Winning Matches check
+function checkMatches(board, symbol) {
+    let winningMatches = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ]
 
+    //check against combos
+    for (let match of winningMatches) {
+        let [a, b, c] = match;
+        if (board[a] === symbol && board[b] === symbol && board[c] === symbol) {
+            return true;
+        }
+    }
+    return false
 }
+
