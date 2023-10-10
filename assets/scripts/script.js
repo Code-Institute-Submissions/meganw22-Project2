@@ -58,46 +58,47 @@ for (let i = 0; i < boxes.length; i++) {
 function updateGameStatus() {
     if (isTwoPlayerMode) {
         gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
-    }     
+    }
 }
 
 //Play X or O
 function handleBoxClick(event) {
     let box = event.target;
     if (box.innerHTML === "") {
-        box.innerHTML = currentPlayer;
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
+        box.innerHTML = "X";
+        currentPlayer = "O";
         updateGameStatus();
+
+        //check player mode
+        if (isTwoPlayerMode) {
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+        } else {
+            //sets delay on computer move
+            setTimeout(calculateRandomMove, 500);
+        }
     }
-    
+}
+
+//Vs Computer calculations - Computer is alway "O"
+function calculateRandomMove() {
+    let emptyBoxes = [];
+    //finding empty boxes
+    for (let i = 0; i < boxes.length; i++) {
+        if (boxes[i].innerHTML === "") {
+            emptyBoxes.push(boxes[i]);
+        }
+    }
+    //choose an empty box, and play
+    if (emptyBoxes.length > 0) {
+        const randomIndex = Math.floor(Math.random() * emptyBoxes.length);
+        const selectedBox = emptyBoxes[randomIndex];
+        selectedBox.innerHTML = "O";
+    }
 }
 
 /*
-
-//if vs computer:
-function vsComputer () {
-    if (playerOMove)
-}
-
-/**
- * //ensure box is free for play
-function freeSpace() {
-    //ensure box is free for play
-    let allCleared = true;
-    for (let i = 0; i < clearBoxes.length; i++) {
-        clearBoxes[i].innerHTML !== ""; {
-            allCleared = false;
-            break;
-        }
-    }
-    if (allCleared) {
-       playerXMove = true; 
-    }
-}
- */
-
-
 //check 3 in a row
 function checkMatches() {
 
 }
+*/
