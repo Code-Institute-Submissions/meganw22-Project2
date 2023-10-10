@@ -6,7 +6,7 @@ let vsComputerBtn = document.getElementById('play-computer-btn');
 let playerXText = document.getElementById('player-x');
 let playerOText = document.getElementById('player-o');
 let boxes = document.getElementsByClassName("box");
-let playerXMove = true
+let currentPlayer = "X";
 
 document.addEventListener('DOMContentLoaded', function () {
      
@@ -22,17 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-    newGameBtn.addEventListener("click", function() {
-        newGame();
-    })
 });
+
+newGameBtn.addEventListener("click", function() {
+    newGame();
+})
 
 // Start new game
 function newGame() {
     for (let i = 0; i < clearBoxes.length; i++) {
         clearBoxes[i].innerHTML = "";
     }
-    
 }
 
 //choose player type
@@ -49,14 +49,17 @@ for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", handleBoxClick);
 }
 
-//X turn to play
+
+//Play X or O
 function handleBoxClick(event) {
-    if (playerXMove) {
-        event.target.innerHTML = "X";
-        playerXMove = false;
-    } 
+    let box = event.target;
+    if (box.innerHTML === "") {
+        box.innerHTML = currentPlayer;
+        currentPlayer = currentPlayer === "X" ? "O":"X";
+    }
 }
 
+/*
 
 //if vs computer:
 function vsComputer () {
