@@ -1,11 +1,11 @@
 // general settings
 let newGameBtn = document.getElementById('new-game-btn');
-let clearBoxes = document.getElementsByClassName("box");
 let twoPlayersBtn = document.getElementById('two-players-btn');
 let vsComputerBtn = document.getElementById('play-computer-btn');
 let playerXText = document.getElementById('player-x');
 let playerOText = document.getElementById('player-o');
 let boxes = document.getElementsByClassName("box");
+let gameStatus = document.getElementsByClassName("game-status");
 let currentPlayer = "X";
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -24,16 +24,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-newGameBtn.addEventListener("click", function() {
-    newGame();
-})
+
 
 // Start new game
 function newGame() {
-    for (let i = 0; i < clearBoxes.length; i++) {
-        clearBoxes[i].innerHTML = "";
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].innerHTML = "";
     }
+    currentPlayer = "X";
+    updateGameStatus();
 }
+newGameBtn.addEventListener("click", newGame)
 
 //choose player type
     twoPlayersBtn.addEventListener('click', function() {
@@ -49,6 +50,10 @@ for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", handleBoxClick);
 }
 
+// Update game status
+function updateGameStatus() {
+    gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
+}
 
 //Play X or O
 function handleBoxClick(event) {
@@ -57,6 +62,7 @@ function handleBoxClick(event) {
         box.innerHTML = currentPlayer;
         currentPlayer = currentPlayer === "X" ? "O":"X";
     }
+    updateGameStatus();
 }
 
 /*

@@ -66,6 +66,11 @@ body {
     font-size: 50px ;
 }
 
+.game-status {
+    text-align: center;
+    font-size: 2em;
+}
+
 .scores-box {
     padding: 10px;
     font-size: 20px;
