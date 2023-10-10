@@ -5,11 +5,12 @@ let vsComputerBtn = document.getElementById('play-computer-btn');
 let playerXText = document.getElementById('player-x');
 let playerOText = document.getElementById('player-o');
 let boxes = document.getElementsByClassName("box");
-let gameStatus = document.getElementsByClassName("game-status");
+let gameStatus = document.getElementById("game-status");
 let currentPlayer = "X";
+let isTwoPlayerMode = false;
 
 document.addEventListener('DOMContentLoaded', function () {
-     
+
     //overlay settings
     let overlay = document.querySelector('.overlay');
     if (overlay) {
@@ -17,17 +18,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let closeButton = document.getElementById('lets-go-btn');
         if (closeButton) {
-            closeButton.addEventListener('click', function() {
+            closeButton.addEventListener('click', function () {
                 overlay.style.display = 'none';
             });
         }
     }
 });
 
-
-
 // Start new game
 function newGame() {
+    const boxes = document.getElementsByClassName("box");
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].innerHTML = "";
     }
@@ -36,14 +36,18 @@ function newGame() {
 }
 newGameBtn.addEventListener("click", newGame)
 
-//choose player type
-    twoPlayersBtn.addEventListener('click', function() {
-        playerOText.innerHTML = "Player O";
-    });
+//choose player type buttons
+twoPlayersBtn.addEventListener('click', function () {
+    isTwoPlayerMode = true; //set game to two player mode
+    playerOText.innerHTML = "Player O";
+    newGame();
+});
 
-    vsComputerBtn.addEventListener('click', function() {
-        playerOText.innerHTML = "Computer O";
-    });
+vsComputerBtn.addEventListener('click', function () {
+    isTwoPlayerMode = false; //set game to computer mode
+    playerOText.innerHTML = "Computer O";
+    newGame();
+});
 
 // add click event listeners to all boxes
 for (let i = 0; i < boxes.length; i++) {
@@ -52,7 +56,9 @@ for (let i = 0; i < boxes.length; i++) {
 
 // Update game status
 function updateGameStatus() {
-    gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
+    if (isTwoPlayerMode) {
+        gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
+    }     
 }
 
 //Play X or O
@@ -60,9 +66,10 @@ function handleBoxClick(event) {
     let box = event.target;
     if (box.innerHTML === "") {
         box.innerHTML = currentPlayer;
-        currentPlayer = currentPlayer === "X" ? "O":"X";
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+        updateGameStatus();
     }
-    updateGameStatus();
+    
 }
 
 /*
