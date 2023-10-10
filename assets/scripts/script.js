@@ -10,7 +10,6 @@ let currentPlayer = "X";
 let isTwoPlayerMode = false;
 let twoPlayersBtnClicked = false;
 
-
 document.addEventListener('DOMContentLoaded', function () {
 
     //overlay settings
@@ -72,14 +71,15 @@ vsComputerBtn.addEventListener('click', onePlayerMode)
 
 // Update game status
 function updateGameStatus() {
-    let gameBoard = Array.from(document.getElementById("game-board").children).map(box => box.textContent);
-if (checkMatches(gameBoard, "X")) {
-    gameStatus.textContent = "Player X wins!"
-} else if (checkMatches(gameBoard, "O")) {
-    gameStatus.textContent = "Player O wins!"
-} else {
-    gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
-}}
+    let gameBoard = Array.from(boxes).map(box => box.textContent);
+    if (checkMatches(gameBoard, "X")) {
+        gameStatus.textContent = "Player X wins!"
+    } else if (checkMatches(gameBoard, "O")) {
+        gameStatus.textContent = "Player O wins!"
+    } else {
+        gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
+    }
+}
 
 //Play X or O
 function handleBoxClick(event) {
@@ -98,8 +98,8 @@ function handleBoxClick(event) {
             if (box.innerHTML === "") {
                 box.innerHTML = "X";
                 currentPlayer = "O";
-                updateGameStatus();
                 setTimeout(calculateRandomMove, 500);
+                updateGameStatus();
             }
         }
     }
@@ -107,8 +107,14 @@ function handleBoxClick(event) {
 
 //Vs Computer calculations - Computer is alway "O"
 function calculateRandomMove() {
-    let emptyBoxes = [];
+    updateGameBoard();
+    //check if match is found
+    if (checkMatches(gameBoard, "X") || checkMatches(gameBoard, "O")) {
+        return;
+    }
+
     //finding empty boxes
+    let emptyBoxes = [];
     for (let i = 0; i < boxes.length; i++) {
         if (boxes[i].innerHTML === "") {
             emptyBoxes.push(boxes[i]);
@@ -119,6 +125,12 @@ function calculateRandomMove() {
         const randomIndex = Math.floor(Math.random() * emptyBoxes.length);
         const selectedBox = emptyBoxes[randomIndex];
         selectedBox.innerHTML = "O";
+        currentPlayer = "X";
+        updateGameStatus();
+    }
+    updateGameBoard();
+    if (checkMatches(gameBoard, "X") || checkMatches(gameBoard, "O")) {
+        return;
     }
 }
 
@@ -145,3 +157,6 @@ function checkMatches(board, symbol) {
     return false
 }
 
+function updateGameBoard() {
+    gameBoard = Array.from(boxes).map(box => box.innerHTML);
+}
