@@ -8,6 +8,8 @@ let boxes = document.getElementsByClassName("box");
 let gameStatus = document.getElementById("game-status");
 let currentPlayer = "X";
 let isTwoPlayerMode = false;
+let twoPlayersBtnClicked = false;
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -36,23 +38,56 @@ function newGame() {
 }
 newGameBtn.addEventListener("click", newGame)
 
-//choose player type buttons
-twoPlayersBtn.addEventListener('click', function () {
-    isTwoPlayerMode = true; //set game to two player mode
-    playerOText.innerHTML = "Player O";
-    newGame();
-});
-
-vsComputerBtn.addEventListener('click', function () {
-    isTwoPlayerMode = false; //set game to computer mode
-    playerOText.innerHTML = "Computer O";
-    newGame();
-});
-
 // add click event listeners to all boxes
 for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", handleBoxClick);
 }
+
+//Two Player mode ONLY
+function twoPlayerMode() {
+    isTwoPlayerMode = true; //set game to two player mode
+    playerOText.innerHTML = "Player O";
+    newGame();
+
+    //2 player mode button active
+    twoPlayersBtnClicked = true;
+    twoPlayersBtn.style.backgroundColor = 'rgb(253, 239, 245)';
+    vsComputerBtn.style.backgroundColor = '';
+}
+
+twoPlayersBtn.addEventListener('click', twoPlayerMode);
+
+
+//Play X or O
+function handleBoxClick(event) {
+        let box = event.target;
+        if (box.innerHTML === "") {
+            box.innerHTML = currentPlayer;
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+            updateGameStatus();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+// Vs Computer mode ONLY
+vsComputerBtn.addEventListener('click', function () {
+        isTwoPlayerMode = false; //set game to computer mode
+        playerOText.innerHTML = "Computer O";
+        newGame();
+        //1 player mode button active
+        twoPlayersBtnClicked = false;
+        twoPlayersBtn.style.backgroundColor = '';
+        vsComputerBtn.style.backgroundColor = 'rgb(253, 239, 245)';
+    });
 
 // Update game status
 function updateGameStatus() {
@@ -61,23 +96,7 @@ function updateGameStatus() {
     }
 }
 
-//Play X or O
-function handleBoxClick(event) {
-    let box = event.target;
-    if (box.innerHTML === "") {
-        box.innerHTML = "X";
-        currentPlayer = "O";
-        updateGameStatus();
-
-        //check player mode
-        if (isTwoPlayerMode) {
-            currentPlayer = currentPlayer === "X" ? "O" : "X";
-        } else {
-            //sets delay on computer move
-            setTimeout(calculateRandomMove, 500);
-        }
-    }
-}
+/*
 
 //Vs Computer calculations - Computer is alway "O"
 function calculateRandomMove() {
