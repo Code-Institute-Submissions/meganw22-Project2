@@ -9,6 +9,8 @@ let gameStatus = document.getElementById("game-status");
 let currentPlayer = "X";
 let isTwoPlayerMode = false;
 let twoPlayersBtnClicked = false;
+let playerXScore = 0;
+let playerOScore = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -49,7 +51,7 @@ function twoPlayerMode() {
     isTwoPlayerMode = true; //set game to two player mode
     playerOText.innerHTML = "Player O";
     newGame();
-
+    resetPlayerScore()
     //2 player mode button active
     twoPlayersBtnClicked = true;
     twoPlayersBtn.style.backgroundColor = 'rgb(253, 239, 245)';
@@ -62,6 +64,7 @@ function onePlayerMode() {
     isTwoPlayerMode = false; //set game to computer mode
     playerOText.innerHTML = "Computer O";
     newGame();
+    resetPlayerScore()
     //1 player mode button active
     twoPlayersBtnClicked = false;
     twoPlayersBtn.style.backgroundColor = '';
@@ -74,8 +77,12 @@ function updateGameStatus() {
     let gameBoard = Array.from(boxes).map(box => box.textContent);
     if (checkMatches(gameBoard, "X")) {
         gameStatus.textContent = "Player X wins!"
+        incrementScore("X")
     } else if (checkMatches(gameBoard, "O")) {
         gameStatus.textContent = "Player O wins!"
+        incrementScore("O")
+    } else if (gameBoard.every(cell => cell !== "")) {
+        gameStatus.textContent = "It's a draw!";
     } else {
         gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
     }
@@ -147,7 +154,7 @@ function checkMatches(board, symbol) {
         [2, 4, 6]
     ]
 
-    //check against combos
+    //check for win
     for (let match of winningMatches) {
         let [a, b, c] = match;
         if (board[a] === symbol && board[b] === symbol && board[c] === symbol) {
@@ -158,5 +165,24 @@ function checkMatches(board, symbol) {
 }
 
 function updateGameBoard() {
+    //['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
     gameBoard = Array.from(boxes).map(box => box.innerHTML);
+}
+
+function incrementScore(winner) {
+    //increment the score to the winner of the match
+    if (winner === "X") {
+        playerXScore++;
+        document.getElementById("px-score").textContent = playerXScore;
+    } else if (winner === "O") {
+        playerOScore++;
+        document.getElementById("po-score").textContent = playerOScore;
+    }
+}
+
+function resetPlayerScore() {
+    playerXScore = 0;
+    playerOScore = 0;
+    document.getElementById("px-score").textContent = playerXScore;
+    document.getElementById("po-score").textContent = playerOScore;
 }
