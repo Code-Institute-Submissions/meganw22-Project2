@@ -11,6 +11,7 @@ let isTwoPlayerMode = false;
 let twoPlayersBtnClicked = false;
 let playerXScore = 0;
 let playerOScore = 0;
+let isGameOver = false;
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -86,29 +87,33 @@ function updateGameStatus() {
     } else {
         gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
     }
+    gameOverCheck();
 }
 
 //Play X or O
 function handleBoxClick(event) {
-    //if two players
-    if (isTwoPlayerMode) {
-        let box = event.target;
-        if (box.innerHTML === "") {
-            box.innerHTML = currentPlayer;
-            currentPlayer = currentPlayer === "X" ? "O" : "X";
-            updateGameStatus();
-        }
-    } else {
-        //if vs computer
-        if (!isTwoPlayerMode) {
+    if (!isGameOver) {
+        //if two players
+        if (isTwoPlayerMode) {
             let box = event.target;
             if (box.innerHTML === "") {
-                box.innerHTML = "X";
-                currentPlayer = "O";
-                setTimeout(calculateRandomMove, 500);
+                box.innerHTML = currentPlayer;
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
                 updateGameStatus();
             }
+        } else {
+            //if vs computer
+            if (!isTwoPlayerMode) {
+                let box = event.target;
+                if (box.innerHTML === "") {
+                    box.innerHTML = "X";
+                    currentPlayer = "O";
+                    setTimeout(calculateRandomMove, 500);
+                    updateGameStatus();
+                }
+            }
         }
+        gameOverCheck();
     }
 }
 
@@ -185,4 +190,8 @@ function resetPlayerScore() {
     playerOScore = 0;
     document.getElementById("px-score").textContent = playerXScore;
     document.getElementById("po-score").textContent = playerOScore;
+}
+
+function gameOverCheck() {
+    isGameOver = checkMatches(gameBoard, "X") || checkMatches(gameBoard, "O") || gameBoard.every(cell => cell !== "")
 }
