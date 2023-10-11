@@ -24,14 +24,14 @@
             <div class="overlay">
                 <div class="overlay-content">
                     <h2>Welcome to Noughts & Crosses!</h2>
-                    <p>Click 'New Game' to play. <br> The default game play is 2 player. <br> Be the first to get 3 in a row to
+                    <p>Choose one or two players to start. <br> Be the first to get 3 in a row to
                         win!</p>
                     <button id="lets-go-btn">Let's Go</button>
                 </div>
             </div>
             <div id="game-section">
                 <!--Grid area-->
-                <div class="grid-container">
+                <div class="grid-container" id="game-board">
                     <div class="box" id="sq1">X</div>
                     <div class="box" id="sq2">O</div>
                     <div class="box" id="sq3">X</div>
@@ -43,17 +43,12 @@
                     <div class="box" id="sq9">X</div>
                 </div>
                 <!--Game Status-->
-                <h2 class="game-status"></h2>
+                <h2 id="game-status"></h2>
                 <!--Score Area-->
                 <div class="scores-box">
                     <span>
                         <div id="player-x">Player X</div>
                         <div id="px-score">0</div>
-                    </span>
-                    <span>
-                        <div id="draw-game">Draw</div>
-                        <div id="draw-score">0</div>
-                    </span>
                     </span>
                     <span>
                         <div id="player-o">Player O</div>
@@ -70,12 +65,13 @@
                     </div>
                     <!--Change Player type buttons-->
                     <div id="change-player-type" class="center-align">
+                         <span>
+                            <button id="play-computer-btn">1 Player</button>
+                        </span>
                         <span>
                             <button id="two-players-btn">2 Player</button>
                         </span>
-                        <span>
-                            <button id="play-computer-btn">Computer</button>
-                        </span>
+                       
                     </div>
                 </div>
             </div>
