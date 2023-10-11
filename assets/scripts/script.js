@@ -38,7 +38,8 @@ function newGame() {
     }
     currentPlayer = "X";
     updateGameStatus();
-    
+    hideNewGameButton();
+    isGameOver = false;
 }
 newGameBtn.addEventListener("click", newGame)
 
@@ -90,6 +91,9 @@ function updateGameStatus() {
         isGameOver = true;
     } else {
         gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
+    }
+    if (isGameOver) {
+        newBtnOverlay.style.display = 'flex';
     }
 }
 
