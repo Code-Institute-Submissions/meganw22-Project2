@@ -45,8 +45,12 @@ body {
     margin: 20px;
 }
 
-#game-board {
+.game-section {
     position: relative;
+    
+}
+
+#game-board {
     width: 300px;
     height: 300px;
     display: grid;
@@ -59,7 +63,7 @@ body {
 
 #new-btn-overlay {
     position: absolute;
-    bottom: 39%;
+    bottom: 54%;
     display: flex;
     height: 300px;
     width: 300px;
