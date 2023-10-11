@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="/assets/images/tictactoe.png" type="image/png">
+    <title>Noughts & Crosses</title>
 
     <!--Style Sheet-->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -12,11 +13,11 @@
 
 <body>
     <header id="game-title">
-        <h1>
+        <div>
             <div>Noughts</div>
             <div>&</div>
             <div>Crosses</div>
-        </h1>
+        </div>
     </header>
     <main>
         <!--Game Section-->
@@ -46,13 +47,13 @@
                 <h2 id="game-status">Let's Play!</h2>
                 <!--Score Area-->
                 <div class="scores-box">
-                    <span>
-                        <div id="player-x">Player X</div>
-                        <div id="px-score">0</div>
+                    <span class="score-container">
+                        <span id="player-x">Player X</span>
+                        <span id="px-score">0</span>
                     </span>
-                    <span>
-                        <div id="player-o">Computer O</div>
-                        <div id="po-score">0</div>
+                    <span class="score-container">
+                        <span id="player-o">Computer O</span>
+                        <span id="po-score">0</span>
                     </span>
                 </div>
                 <!--Buttons-->

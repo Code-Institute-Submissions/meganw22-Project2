@@ -1,10 +1,9 @@
 // general settings
-let newGameBtn = document.getElementById('new-game-btn');
-let newBtnOverlay = document.getElementById('new-btn-overlay')
-let twoPlayersBtn = document.getElementById('two-players-btn');
-let vsComputerBtn = document.getElementById('play-computer-btn');
-let playerXText = document.getElementById('player-x');
-let playerOText = document.getElementById('player-o');
+let newGameBtn = document.getElementById("new-game-btn");
+let newBtnOverlay = document.getElementById("new-btn-overlay");
+let twoPlayersBtn = document.getElementById("two-players-btn");
+let vsComputerBtn = document.getElementById("play-computer-btn");
+let playerOText = document.getElementById("player-o");
 let boxes = document.getElementsByClassName("box");
 let gameStatus = document.getElementById("game-status");
 let currentPlayer = "X";
@@ -14,17 +13,17 @@ let playerXScore = 0;
 let playerOScore = 0;
 let isGameOver = false;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
 
     //overlay settings
-    let overlay = document.querySelector('.overlay');
+    let overlay = document.querySelector(".overlay");
     if (overlay) {
-        overlay.style.display = 'flex';
+        overlay.style.display = "flex";
         hideNewGameButton();
-        let closeButton = document.getElementById('lets-go-btn');
+        let closeButton = document.getElementById("lets-go-btn");
         if (closeButton) {
-            closeButton.addEventListener('click', function () {
-                overlay.style.display = 'none';
+            closeButton.addEventListener("click", function () {
+                overlay.style.display = "none";
             });
         }
     }
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Start new game
 function newGame() {
-    const boxes = document.getElementsByClassName("box");
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].innerHTML = "";
     }
@@ -41,7 +39,7 @@ function newGame() {
     hideNewGameButton();
     isGameOver = false;
 }
-newGameBtn.addEventListener("click", newGame)
+newGameBtn.addEventListener("click", newGame);
 
 // add click event listeners to all boxes
 for (let i = 0; i < boxes.length; i++) {
@@ -57,10 +55,10 @@ function twoPlayerMode() {
     resetPlayerScore();
     //2 player mode button active
     twoPlayersBtnClicked = true;
-    twoPlayersBtn.style.backgroundColor = 'rgb(253, 239, 245)';
-    vsComputerBtn.style.backgroundColor = '';
+    twoPlayersBtn.style.backgroundColor = "rgb(253, 239, 245)";
+    vsComputerBtn.style.backgroundColor = "";
 }
-twoPlayersBtn.addEventListener('click', twoPlayerMode);
+twoPlayersBtn.addEventListener("click", twoPlayerMode);
 
 // Vs Computer mode set up
 function onePlayerMode() {
@@ -70,20 +68,20 @@ function onePlayerMode() {
     resetPlayerScore();
     //1 player mode button active
     twoPlayersBtnClicked = false;
-    twoPlayersBtn.style.backgroundColor = '';
-    vsComputerBtn.style.backgroundColor = 'rgb(253, 239, 245)';
+    twoPlayersBtn.style.backgroundColor = "";
+    vsComputerBtn.style.backgroundColor = "rgb(253, 239, 245)";
 }
-vsComputerBtn.addEventListener('click', onePlayerMode)
+vsComputerBtn.addEventListener("click", onePlayerMode);
 
 // Update game status
 function updateGameStatus() {
     let gameBoard = Array.from(boxes).map(box => box.textContent);
     if (checkMatches(gameBoard, "X")) {
-        gameStatus.textContent = "Player X wins!"
+        gameStatus.textContent = "Player X wins!";
         incrementScore("X");
         isGameOver = true;
     } else if (checkMatches(gameBoard, "O")) {
-        gameStatus.textContent = "Player O wins!"
+        gameStatus.textContent = "Player O wins!";
         incrementScore("O");
         isGameOver = true;
     } else if (gameBoard.every(cell => cell !== "")) {
@@ -93,7 +91,7 @@ function updateGameStatus() {
         gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
     }
     if (isGameOver) {
-        newBtnOverlay.style.display = 'flex';
+        newBtnOverlay.style.display = "flex";
     }
 }
 
@@ -163,7 +161,7 @@ function checkMatches(board, symbol) {
         [2, 5, 8],
         [0, 4, 8],
         [2, 4, 6]
-    ]
+    ];
 
     //check for win
     for (let match of winningMatches) {
@@ -172,7 +170,7 @@ function checkMatches(board, symbol) {
             return true;
         }
     }
-    return false
+    return false;
 }
 
 function updateGameBoard() {
@@ -198,10 +196,8 @@ function resetPlayerScore() {
     document.getElementById("po-score").textContent = playerOScore;
 }
 
-function gameOverCheck() {
-    isGameOver = checkMatches(gameBoard, "X") || checkMatches(gameBoard, "O") || gameBoard.every(cell => cell !== "");
-}
+
 
 function hideNewGameButton() {
-    newBtnOverlay.style.display = 'none';
+    newBtnOverlay.style.display = "none";
 }
