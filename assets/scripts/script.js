@@ -1,5 +1,6 @@
 // general settings
 let newGameBtn = document.getElementById('new-game-btn');
+let newBtnOverlay = document.getElementById('new-btn-overlay')
 let twoPlayersBtn = document.getElementById('two-players-btn');
 let vsComputerBtn = document.getElementById('play-computer-btn');
 let playerXText = document.getElementById('player-x');
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let overlay = document.querySelector('.overlay');
     if (overlay) {
         overlay.style.display = 'flex';
-
+        hideNewGameButton();
         let closeButton = document.getElementById('lets-go-btn');
         if (closeButton) {
             closeButton.addEventListener('click', function () {
@@ -37,9 +38,9 @@ function newGame() {
     }
     currentPlayer = "X";
     updateGameStatus();
+    
 }
 newGameBtn.addEventListener("click", newGame)
-
 
 // add click event listeners to all boxes
 for (let i = 0; i < boxes.length; i++) {
@@ -52,7 +53,7 @@ function twoPlayerMode() {
     isTwoPlayerMode = true; //set game to two player mode
     playerOText.innerHTML = "Player O";
     newGame();
-    resetPlayerScore()
+    resetPlayerScore();
     //2 player mode button active
     twoPlayersBtnClicked = true;
     twoPlayersBtn.style.backgroundColor = 'rgb(253, 239, 245)';
@@ -65,7 +66,7 @@ function onePlayerMode() {
     isTwoPlayerMode = false; //set game to computer mode
     playerOText.innerHTML = "Computer O";
     newGame();
-    resetPlayerScore()
+    resetPlayerScore();
     //1 player mode button active
     twoPlayersBtnClicked = false;
     twoPlayersBtn.style.backgroundColor = '';
@@ -78,16 +79,18 @@ function updateGameStatus() {
     let gameBoard = Array.from(boxes).map(box => box.textContent);
     if (checkMatches(gameBoard, "X")) {
         gameStatus.textContent = "Player X wins!"
-        incrementScore("X")
+        incrementScore("X");
+        isGameOver = true;
     } else if (checkMatches(gameBoard, "O")) {
         gameStatus.textContent = "Player O wins!"
-        incrementScore("O")
+        incrementScore("O");
+        isGameOver = true;
     } else if (gameBoard.every(cell => cell !== "")) {
         gameStatus.textContent = "It's a draw!";
+        isGameOver = true;
     } else {
         gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
     }
-    gameOverCheck();
 }
 
 //Play X or O
@@ -113,7 +116,6 @@ function handleBoxClick(event) {
                 }
             }
         }
-        gameOverCheck();
     }
 }
 
@@ -193,5 +195,9 @@ function resetPlayerScore() {
 }
 
 function gameOverCheck() {
-    isGameOver = checkMatches(gameBoard, "X") || checkMatches(gameBoard, "O") || gameBoard.every(cell => cell !== "")
+    isGameOver = checkMatches(gameBoard, "X") || checkMatches(gameBoard, "O") || gameBoard.every(cell => cell !== "");
+}
+
+function hideNewGameButton() {
+    newBtnOverlay.style.display = 'none';
 }
