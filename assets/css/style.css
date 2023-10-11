@@ -46,6 +46,10 @@ body {
     margin: 20px;
 }
 
+#new-game-btn {
+    background-color: rgb(253, 239, 245);
+}
+
 #new-btn-overlay {
     display: flex;
     position: fixed;
