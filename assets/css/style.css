@@ -35,7 +35,6 @@ body {
     align-items: center;
 }
 
-
 .overlay-content {
     position: absolute;
     font-size: 25px;
@@ -46,27 +45,28 @@ body {
     margin: 20px;
 }
 
+#game-board {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 #new-game-btn {
     background-color: rgb(253, 239, 245);
 }
 
 #new-btn-overlay {
+    position: absolute;
+    bottom: 39%;
     display: flex;
-    position: fixed;
     height: 300px;
     width: 300px;
     background-color: rgba(243, 172, 131, 0.7);
     z-index: 99;
     justify-content: center;
     align-items: center;
-    transform: translate(-150px, -180px);
-}
-
-#game-board {
-    width: 300px;
-    height: 300px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
 }
 
 .box {
