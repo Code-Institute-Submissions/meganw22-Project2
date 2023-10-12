@@ -94,7 +94,7 @@ For two-player games, when selecting between 1 and 2 players, the text interchan
 ## Favicon
 The favicon was selected to represent a visual of the game in black and white.
 
-![favicon](https://github.com/meganw22/Project2/assets/141934888/bbb57e05-7b14-4666-9832-0b7c20d88340)
+![favicon](https://github.com/meganw22/Project2/assets/141934888/c719accc-21d6-4724-ae36-573d0d390276)
 
 ## Future Development
 ### Customisable symbols
@@ -107,12 +107,48 @@ When playing against the Computer, there is a very likely chance of winning. I p
 Currently, the computer always has the 2nd move of the game. Typically, the first move dictactes the stategy of the game and can hugely increase the first players advantage and chance of winning. My plan is allow the computer to place a move first to adjust the game play for more strategic gaming.
 
 # Technologies Used
+- GitHub, stores the main project with ability to deploy online 
+- GitPod, the software used to build the HTML code and create CSS styles and create JS code
+- HTML5, The current version of HTML used
+- CSS, The style language used
+- JS, code to enhance interactivity on webpages and create the game
+- Google Chrome, primary viewing port for gitpod code, developer tools used for faultfinding and further coding
+- Samsung S23 for mobile view port and testing
 
 # Testing
-## html
-## css
-## javascript
+## HTML Validator
 
-# deployment
+![html validator](https://github.com/meganw22/Project2/assets/141934888/9afc8de1-f798-4590-9fe1-1d0c54a5cd96)
 
-# credits
+## CSS Validator
+
+![css validator](https://github.com/meganw22/Project2/assets/141934888/9d42b51c-d793-4536-9df7-04623f0f4603)
+
+## JS Hint
+
+![jshint validation](https://github.com/meganw22/Project2/assets/141934888/7fd91131-4153-4710-8ace-864d6b51a4a8)
+
+## Full Link testing
+
+
+
+# Deployment
+Deployment was done on GitHub by following these steps:
+
+1. Login to GitHub and select the project file 'meganw22/Project2.'
+2. Go to 'Settings' in the menu tab, navigate to 'Code and Automation,' and select 'Pages.'
+3. Ensure 'Source' is set to 'Deploy from branch' with 'Branch' as 'main.'
+4. Save the settings and wait a few minutes.
+5. Access the deployed site from the 'code' tab or through this link: https://meganw22.github.io/Project2/.
+
+# Credits
+## For Content
+- Draw.io for creation of wireframes (http://draw.io/ )
+- Google Fonts to import 'Fredoka' to CSS
+- Colour scheme shown using Coloors (https://coolors.co/)
+- Favicon was created in Microsoft Word by myself.
+  
+##  For testing procedures:
+- HTML Validator  (https://validator.w3.org/)
+- CSS Validator (https://jigsaw.w3.org/css-validator/)
+- JSHint Check (https://jshint.com/)
