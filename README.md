@@ -117,19 +117,18 @@ Currently, the computer always has the 2nd move of the game. Typically, the firs
 
 # Testing
 ## HTML Validator
-
+W3C Markup Validation Service was used to ensure no errors were found in the HTML of the website - No errors displayed
 ![html validator](https://github.com/meganw22/Project2/assets/141934888/9afc8de1-f798-4590-9fe1-1d0c54a5cd96)
 
 ## CSS Validator
-
+W3C CSS Validation Service was used to ensure that all CSS code in the website is correct - No errors are displayed
 ![css validator](https://github.com/meganw22/Project2/assets/141934888/9d42b51c-d793-4536-9df7-04623f0f4603)
 
 ## JS Hint
-
+JS Hint is a code quality tool used to check for any errors in the code - None found and no warnings present.
 ![jshint validation](https://github.com/meganw22/Project2/assets/141934888/7fd91131-4153-4710-8ace-864d6b51a4a8)
 
 ## Full Link testing
-
 
 
 # Deployment
