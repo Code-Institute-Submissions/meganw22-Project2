@@ -12,6 +12,7 @@ let twoPlayersBtnClicked = false;
 let playerXScore = 0;
 let playerOScore = 0;
 let isGameOver = false;
+let gameBoard = Array.from(boxes).map(box => box.textContent);
 
 document.addEventListener("DOMContentLoaded", function () {
 
