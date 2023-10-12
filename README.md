@@ -59,6 +59,7 @@ When a game is finished, the overlay will cover the content of the game area onl
 To begin the game, the user selects 1 or 2 players, and the button colour changes to reflect the choice throughout the game.
 
 ![1 player selected](https://github.com/meganw22/Project2/assets/141934888/c950e283-dcea-4702-a962-2230b562da70)
+
 ![2 player selected](https://github.com/meganw22/Project2/assets/141934888/6ffe0f2e-fa94-4142-b594-3cd3dbe81c1d)
 
 ## Game Board Area
@@ -147,8 +148,11 @@ Lighthouse was used to check each page in the website for Performance, Accessibi
 |As a player, I want to control the game using clearly labelled buttons | ![name game](https://github.com/meganw22/Project2/assets/141934888/0ea93437-f248-46a1-83da-e9315ee8b61c)![1 player selected](https://github.com/meganw22/Project2/assets/141934888/40c6069a-e8fc-4dae-89a2-0d7495db6533)![lets go](https://github.com/meganw22/Project2/assets/141934888/d3406da2-f542-4b17-99a6-28d61c0ea0f3)| Pass |
 | As a player, I want the game to prevent further plays if the game has been completed| User cannot enter a new symbol when clicking on the game area after the game is completed.| Pass |
 
-## Full Link testing
-
+## Device Compatibility testing
+| Device | Images |
+|---|---|
+|HP laptop | ![hp laptop](https://github.com/meganw22/Project2/assets/141934888/4884d79f-7894-4a90-acc7-98d6c23eb568) ![hp laptop new game](https://github.com/meganw22/Project2/assets/141934888/cfb43635-762b-4993-9a80-4fc368bb549b)|
+| Samsung S23 | ![samsung start](https://github.com/meganw22/Project2/assets/141934888/4fecf18d-77ae-417b-891e-50b7a4711e6f)![samsung new game](https://github.com/meganw22/Project2/assets/141934888/0a08b4c8-8091-45dd-ab6a-98682d00395f) |
 
 # Deployment
 Deployment was done on GitHub by following these steps:
