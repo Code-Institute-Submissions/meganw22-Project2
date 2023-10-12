@@ -5,11 +5,11 @@ The objective of the game is to be the first player to form a row, column or dia
 
 [Play Noughts & Crosses Here](https://meganw22.github.io/Project2/)
 
-# UX Design
+## UX Design
 
 ![AMIRESPONSIVE](https://github.com/meganw22/Project2/assets/141934888/e18db365-e21b-4e5e-aad9-f6370696bace)
 
-## User Stories
+### User Stories
 * As a player, I want to enjoy a user-friendly and visually appealing website for a good gaming experience
 * As a player, I want the option of playing against a computer or second individual.
 * As a player, I want to have prompts and feedback about the game status
@@ -17,27 +17,26 @@ The objective of the game is to be the first player to form a row, column or dia
 * As a player, I want to control the game using clearly labelled buttons
 * As a player, I want the game to prevent further plays if the game has been completed
 
-## Wireframes
+### Wireframes
 Before commencing with creating the game, I designed some wireframes to show the general layout of the webpage.
-### New Game Overlay
+#### New Game Overlay
 ![newgameoverlay](https://github.com/meganw22/Project2/assets/141934888/238c6548-a6a6-4c39-a664-0d3639c9b16c)
-### Main Game set up
+#### Main Game set up
 ![mainpage](https://github.com/meganw22/Project2/assets/141934888/def6a055-dc45-45b9-8839-bcaef1bc8f99)
-### New Game Overlay
+#### New Game Overlay
 ![newgameoverlay](https://github.com/meganw22/Project2/assets/141934888/9fc067ad-2744-4f3f-a12b-a074fd45fa9f)
 
-## Colour Scheme
+### Colour Scheme
 I chose to keep my colour scheme simple and only chose a select few colours to design the webpage. The colours can clearly distinguish the different elements and provides a consistant look and feel which improves the overall design.
 
 ![colour scheme](https://github.com/meganw22/Project2/assets/141934888/9b439b88-68ad-477f-837c-6a25227ae781)
 
-## Typography
+### Typography
 Using Google fonts, I selected the font **Fredoka** to use throughout the game. I found it to be a simple yet fun font and ensured the font was shown in Semibold 600.
 
 ![Fredoka font](https://github.com/meganw22/Project2/assets/141934888/0d265c4a-2725-4345-91e2-635bcb1a2df8)
 
 # Features
-Game functions
 
 ## Overlays
 I have designed the game with overlays to draw the users attention which places the message front and centre so it is difficult to miss. Overlays also provide clarity by reducing the clutter from the webpage when the item is not currently in use.
