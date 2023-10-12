@@ -118,7 +118,7 @@ Currently, the computer always has the 2nd move of the game. Typically, the firs
 - Samsung S23 for mobile view port and testing
 
 # Testing
-[View Test protocols here](testing.md)
+[View Test protocols here](Testing.md)
 
 # Deployment
 Deployment was done on GitHub by following these steps:
