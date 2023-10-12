@@ -39,13 +39,13 @@ function newGame() {
     hideNewGameButton();
     isGameOver = false;
 }
+
 newGameBtn.addEventListener("click", newGame);
 
 // add click event listeners to all boxes
 for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", handleBoxClick);
 }
-
 
 //Two Player mode set up
 function twoPlayerMode() {
@@ -58,6 +58,7 @@ function twoPlayerMode() {
     twoPlayersBtn.style.backgroundColor = "rgb(253, 239, 245)";
     vsComputerBtn.style.backgroundColor = "";
 }
+
 twoPlayersBtn.addEventListener("click", twoPlayerMode);
 
 // Vs Computer mode set up
@@ -71,6 +72,7 @@ function onePlayerMode() {
     twoPlayersBtn.style.backgroundColor = "";
     vsComputerBtn.style.backgroundColor = "rgb(253, 239, 245)";
 }
+
 vsComputerBtn.addEventListener("click", onePlayerMode);
 
 // Update game status
@@ -136,6 +138,7 @@ function calculateRandomMove() {
             emptyBoxes.push(boxes[i]);
         }
     }
+    
     //choose an empty box, and play
     if (emptyBoxes.length > 0) {
         const randomIndex = Math.floor(Math.random() * emptyBoxes.length);
@@ -144,6 +147,7 @@ function calculateRandomMove() {
         currentPlayer = "X";
         updateGameStatus();
     }
+
     updateGameBoard();
     if (checkMatches(gameBoard, "X") || checkMatches(gameBoard, "O")) {
         return;
@@ -195,8 +199,6 @@ function resetPlayerScore() {
     document.getElementById("px-score").textContent = playerXScore;
     document.getElementById("po-score").textContent = playerOScore;
 }
-
-
 
 function hideNewGameButton() {
     newBtnOverlay.style.display = "none";
