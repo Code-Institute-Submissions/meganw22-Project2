@@ -1,39 +1,40 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Noughts and Crosses
+This website has been created for Project Portfolio 2.
+Noughts and Crosses is a classic two player game played on a 3x3 grid and has the option for 1 or 2 players. 
+The objective of the game is to be the first player to form a row, column or diagonal of 3 matching symbols but if the entire grid is filled and no matches are present, the game is decalred a draw. It is typically a game of strategy and logic.
 
-Welcome,
+[Link to the game] 
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+#UX Design
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+AMIresponsive image
 
-## Codeanywhere Reminders
+##User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+##Wireframes
 
-`python3 -m http.server`
+##Colour Scheme
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+##Typography
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+#Features
 
-`http_server`
+##game functions
+### overlays
+### 2 player options
+### etc
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+##future planning
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+##
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#technologies used
 
-To log into the Heroku toolbelt CLI:
+#testing
+##html
+##css
+##javascript
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#deployment
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+#credits
